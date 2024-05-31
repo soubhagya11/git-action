@@ -1,0 +1,33 @@
+name: Create EC2 Instance
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-ec2-instance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up AWS CLI
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+        aws-region: ap-south-1
+
+    - name: Create EC2 instance
+      run: |
+        INSTANCE_ID=$(aws ec2 run-instances \
+          --image-id ami-0f58b397bc5c1f2e8 \
+          --count 1 \
+          --instance-type t2.micro \
+          --key-name DEVESHKEY \
+          --security-groups default \
+          --query 'Instances[0].InstanceId' \
+          --output text)
+        echo "Instance ID: $INSTANCE_ID"
