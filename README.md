@@ -26,4 +26,4 @@ Then create a file (main.tf & provider.tf) outside of .github folder >>>> And ad
 First Create a folder in your desktop or whatever place you want to >>>> Then go to that folder and right click and click on show more folder then click on open Gitbash here.
 Then type some commands one by one >>>> git clone and your github repository link then press enter >>>> cd your folder name >>>> ls (it can show whatever in that folder) >>>> git add . >>>> git commit -m "pushpa" >>>> git push.
 
-$$ Then your code will push on the repository and it will trigger automatically and an EC2 instance will launch $$
+ Then your code will push on the repository and it will trigger automatically and an EC2 instance will launch 
