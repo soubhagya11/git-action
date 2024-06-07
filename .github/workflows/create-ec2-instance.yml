@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Environment to run tests against'
+        description: 'Lets create an EC2 Instance'
         type: choice
         required: true
         options:
