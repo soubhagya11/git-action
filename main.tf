@@ -3,10 +3,10 @@ provider "aws" {
 }
 
 
-resource "aws_instance" "webserver-ec2" {
+resource "aws_instance" "ec2_pro_max" {
       ami           = "ami-0e4fd655fb4e26c30"
       instance_type = "t2.micro"
        tags = {
-         Name = "web_server"
+         Name = "PRO_MAX"
        }
 }  
